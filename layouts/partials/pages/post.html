@@ -1,4 +1,16 @@
 <main class="main single" id="main">
+
+    {{ $enableTOC := .Params.toc | default .Site.Params.enableTOC }}
+    {{ $displayTOCPlace := .Params.tocPlace | default .Site.Params.displayTOCPlace }}
+    {{ $enableSideTOC := or (eq $displayTOCPlace "left") (eq $displayTOCPlace "right") }}
+
+    {{- if and $enableTOC $enableSideTOC -}}
+    <div class="side-toc"
+    {{- with $displayTOCPlace -}} data-toc-place="{{ . }}"{{- end -}}>
+        {{- partial "utils/toc.html" . -}}  
+    </div>
+    {{- end -}}
+
     <div class="main-inner">
 
         {{ $attrs := partial "utils/data-attributes.html" . }}
@@ -30,7 +42,7 @@
             {{ end }}
 
             {{ $enableTOC := .Params.toc | default .Site.Params.enableTOC -}}
-            {{- if $enableTOC -}}
+            {{- if and $enableTOC (not $enableSideTOC) -}}
                 {{- partial "utils/toc.html" . -}}
             {{- end -}}
 
