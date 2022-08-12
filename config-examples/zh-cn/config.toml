@@ -802,6 +802,11 @@ uglyURLs = false
     # 说明：文章的 Front Matter 中的 `toc`
     #      的优先级高于此处
 
+    # 显示位置 
+    # 可选 "left" | "center" | "right"
+    # 默认为 "center"
+    displayTOCPlace = "center"
+
     # 是否显示目录标题
     displayTOCTitle = true
 
@@ -809,6 +814,7 @@ uglyURLs = false
     displayTOCNum = true
     # 说明：文章的 Front Matter 中的 `tocNum`
     #      的优先级高于此处
+    #      仅在显示位置为 `center` 时可用
 
     # 是否链接文章的分节标题到目录
     linkHeadingsToTOC = true

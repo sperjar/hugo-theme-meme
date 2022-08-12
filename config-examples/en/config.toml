@@ -848,12 +848,17 @@ uglyURLs = false
     #       `toc` in post’s Front Matter
     #       has a higher priority than here
 
+    displayTOCPlace = "center"
+    # Options: "left" | "center" | "right"
+
     displayTOCTitle = true
 
     displayTOCNum = true
     # Note: *global settings*
     #       `tocNum` in post’s Front Matter
     #       has a higher priority than here
+    #       valid when `displayTOCPlace` is
+    #       set to `center` 
 
     linkHeadingsToTOC = true
 

@@ -802,6 +802,8 @@ uglyURLs = false
     # 說明：文章的 Front Matter 中的 `toc`
     #      的優先順序高於此處
 
+    displayTOCPlace = "center"
+
     # 是否顯示目錄標題
     displayTOCTitle = true
 
